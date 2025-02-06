@@ -7,9 +7,27 @@ body{
 
 }
 
+.fondoverde{
+    background-color: rgb(189, 107, 209);
+}
 
+.fondoblanco{
+    background-color: white;
+}
 
+.centro{
+    text-align: center;
+}
 
-.hola{
-    font-style: italic;
+.col{
+    border: 1px solid;
+    border-color: black;
+}
+
+.arriba{
+    margin-top: 20px;
+}
+
+.marco{
+    margin: 10px 5px 10px 5px;
 }

@@ -1,0 +1,15 @@
+
+body{
+    background-image: url(../Images/Fondo10.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+
+
+
+.hola{
+    font-style: italic;
+}

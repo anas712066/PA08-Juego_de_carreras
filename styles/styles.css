@@ -8,11 +8,15 @@ body{
 }
 
 .fondoverde{
-    background-color: rgb(189, 107, 209);
+    background-color: rgb(112, 238, 129);
 }
 
 .fondoblanco{
     background-color: white;
+}
+
+.fondoceleste{
+    background-color: aqua;
 }
 
 .centro{
@@ -26,6 +30,10 @@ body{
 
 .arriba{
     margin-top: 20px;
+}
+
+.abajo{
+    margin-bottom: 20px;
 }
 
 .marco{

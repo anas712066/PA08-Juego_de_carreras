@@ -24,9 +24,8 @@ body{
     padding-top: 10px;
 }
 
-.col{
-    border: 1px solid;
-    border-color: black;
+.borde{
+    border: solid black 1px;
 }
 
 .personajes{
@@ -39,13 +38,11 @@ body{
 }
 
 .arriba{
-    margin-top: 20px;
+    margin-top: 11px;
 }
 
-
-
 .abajo{
-    margin-bottom: 20px;
+    margin-bottom: 11px;
 }
 
 .marco{

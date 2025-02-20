@@ -21,6 +21,7 @@ body{
 
 .centro{
     text-align: center;
+    padding-top: 10px;
 }
 
 .col{
@@ -33,14 +34,15 @@ body{
     padding-right: 50px;
 }
 
-.bordes{
-    border: 1px solid;
-    border-color:black ;
+.espacio_d{
+    margin-right: 30px;
 }
 
 .arriba{
     margin-top: 20px;
 }
+
+
 
 .abajo{
     margin-bottom: 20px;

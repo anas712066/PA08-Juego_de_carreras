@@ -28,6 +28,15 @@ body{
     border-color: black;
 }
 
+.personajes{
+    min-width: 30px;
+}
+
+.bordes{
+    border: 1px solid;
+    border-color:black ;
+}
+
 .arriba{
     margin-top: 20px;
 }
@@ -42,4 +51,8 @@ body{
 
 .espacio {
     padding: 15px;
+}
+
+.container{
+    border: solid black 1px;
 }

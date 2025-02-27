@@ -7,6 +7,7 @@ body{
 
 }
 
+/*Fondos*/
 .fondoverde{
     background-color: rgb(112, 238, 129);
 }
@@ -18,6 +19,24 @@ body{
 .fondoceleste{
     background-color: aqua;
 }
+
+.fondoaumento{
+    background-color: #d9ffa5;
+}
+
+.fondoquitar{
+    background-color: #febaa9;
+}
+
+.fondoempezar{
+    background-color: #00dc0a;
+}
+
+.fondoreiniciar{
+    background-color: #ff2222;
+}
+
+/*Cosas X*/
 
 .centro{
     text-align: center;
@@ -32,6 +51,8 @@ body{
     padding-left: 50px;
     padding-right: 50px;
 }
+
+/*Margenes*/
 
 .espacio_d{
     margin-right: 30px;
@@ -53,6 +74,70 @@ body{
     padding: 15px;
 }
 
-.container{
+.espacio_arriba_15{
+    padding-top: 15px;
+}
+
+.pad_5{
+    padding: 5px 0px 5px 0px;
+}
+
+
+/*.container{
     border: solid black 1px;
+}
+
+.col{
+    border: solid black 1px;
+}
+*/
+/*Dinero Apuesta*/
+.dinero_borde{
+    border: 1px solid black;
+    border-radius: 7px;
+    margin-bottom: 5px;
+}
+
+.aum_dis_dinero{
+    border: solid black 1px;
+    border-radius: 4px;
+    padding: 0px;
+    margin: 10px 0px 5px 0px;
+}
+
+.boton_aum{
+    border: solid black 1px;
+    min-width: 100%;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.boton_dis{
+    border: solid black 1px;
+    min-width: 100%;
+    border-radius: 4px;
+    margin-bottom: 4px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+button{
+    border: none;
+    background-color: transparent;
+}
+
+.emp{
+    border: solid black 1px;
+    border-radius: 3px;
+    padding: 8px 30px 8px 30px;
+    margin: 12px 0px 15px 0px;
+}
+
+.rei{
+    border: solid black 1px;
+    border-radius: 3px;
+    padding: 8px 30px 8px 28px;
+    margin: 12px 0px 15px 11px;
 }

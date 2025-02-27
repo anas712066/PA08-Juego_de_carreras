@@ -78,9 +78,20 @@ body{
     padding-top: 15px;
 }
 
+.espacio_arriba_25{
+    padding-top: 25px;
+}
+
 .pad_5{
     padding: 5px 0px 5px 0px;
 }
+
+/*Hovers*/
+
+.agrandar:hover{
+    size: 20px;
+}
+
 
 
 /*.container{

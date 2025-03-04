@@ -167,3 +167,14 @@ button{
     justify-content: center;
     align-items: center;
 }
+
+/*Efecto escoger personajes*/
+#personajes img{
+    height: 75px;
+    transition: all 300ms;
+    position: relative;
+}
+
+#personajes img:hover{
+    transform: scale(1.3);
+}

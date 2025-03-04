@@ -53,6 +53,10 @@ body{
     padding-right: 50px;
 }
 
+.personaje{
+    border-radius: 5px;
+}
+
 /*Margenes*/
 
 .espacio_d{

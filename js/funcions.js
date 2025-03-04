@@ -1,12 +1,107 @@
+//Valores de Sumar y restar valores
 document.querySelector("#btnSum10").addEventListener("click", sumar10);
 document.querySelector("#btnSum50").addEventListener("click", sumar50);
 
 document.querySelector("#btnRes10").addEventListener("click", resta10);
 document.querySelector("#btnRes50").addEventListener("click", resta50);
 
+//Valores Efecto seleccionar personajes
+document.querySelector("#per1").addEventListener("click", cambiarfondo1);
+document.querySelector("#per2").addEventListener("click", cambiarfondo2);
+document.querySelector("#per3").addEventListener("click", cambiarfondo3);
+document.querySelector("#per4").addEventListener("click", cambiarfondo4);
+document.querySelector("#per5").addEventListener("click", cambiarfondo5);
+document.querySelector("#per6").addEventListener("click", cambiarfondo6);
+
+//Efecto seleccionar personajes
+let color = 'rgb(30, 164, 0)';
+let fondo = 'rgb(112, 238, 129)';
+personaje = 0;
+
+function cambiarfondo1(){
+    //Personaje principal
+    document.querySelector("#dp1").style.backgroundColor = color
+    personaje = 1;
+    
+    //Otros personajes
+    document.querySelector("#dp2").style.backgroundColor = fondo
+    document.querySelector("#dp3").style.backgroundColor = fondo
+    document.querySelector("#dp4").style.backgroundColor = fondo
+    document.querySelector("#dp5").style.backgroundColor = fondo
+    document.querySelector("#dp6").style.backgroundColor = fondo
+
+}
+
+function cambiarfondo2(){
+    //Personaje principal
+    document.querySelector("#dp2").style.backgroundColor = color
+    personaje = 2;
+    
+    //Otros personajes
+    document.querySelector("#dp1").style.backgroundColor = fondo
+    document.querySelector("#dp3").style.backgroundColor = fondo
+    document.querySelector("#dp4").style.backgroundColor = fondo
+    document.querySelector("#dp5").style.backgroundColor = fondo
+    document.querySelector("#dp6").style.backgroundColor = fondo
+}
+
+function cambiarfondo3(){
+    //Personaje principal
+    document.querySelector("#dp3").style.backgroundColor = color
+    personaje = 3;
+    
+    //Otros personajes
+    document.querySelector("#dp1").style.backgroundColor = fondo
+    document.querySelector("#dp2").style.backgroundColor = fondo
+    document.querySelector("#dp4").style.backgroundColor = fondo
+    document.querySelector("#dp5").style.backgroundColor = fondo
+    document.querySelector("#dp6").style.backgroundColor = fondo
+}
+
+function cambiarfondo4(){
+    //Personaje principal
+    document.querySelector("#dp4").style.backgroundColor = color
+    personaje = 4;
+    
+    //Otros personajes
+    document.querySelector("#dp1").style.backgroundColor = fondo
+    document.querySelector("#dp2").style.backgroundColor = fondo
+    document.querySelector("#dp3").style.backgroundColor = fondo
+    document.querySelector("#dp5").style.backgroundColor = fondo
+    document.querySelector("#dp6").style.backgroundColor = fondo
+}
+
+function cambiarfondo5(){
+    //Personaje principal
+    document.querySelector("#dp5").style.backgroundColor = color
+    personaje = 5;
+    
+    //Otros personajes
+    document.querySelector("#dp1").style.backgroundColor = fondo
+    document.querySelector("#dp2").style.backgroundColor = fondo
+    document.querySelector("#dp3").style.backgroundColor = fondo
+    document.querySelector("#dp4").style.backgroundColor = fondo
+    document.querySelector("#dp6").style.backgroundColor = fondo
+}
+
+function cambiarfondo6(){
+    //Personaje principal
+    document.querySelector("#dp6").style.backgroundColor = color
+    personaje = 6;
+    
+    //Otros personajes
+    document.querySelector("#dp1").style.backgroundColor = fondo
+    document.querySelector("#dp2").style.backgroundColor = fondo
+    document.querySelector("#dp3").style.backgroundColor = fondo
+    document.querySelector("#dp4").style.backgroundColor = fondo
+    document.querySelector("#dp5").style.backgroundColor = fondo
+}
+
+//Sumar y restar valores
 let contador = 0;
 let dineroTotal = 1000;
 let dineroMax = 1000;
+
 
 function sumar10(){
 

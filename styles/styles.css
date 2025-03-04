@@ -1,4 +1,4 @@
-
+/*
 body{
     background-image: url(../Images/Fondo10.png);
     background-size: 100% 100%;
@@ -6,6 +6,7 @@ body{
     background-attachment: fixed;
 
 }
+*/
 
 /*Fondos*/
 .fondoverde{
@@ -117,7 +118,7 @@ body{
 }
 
 .boton_aum{
-    border: solid black 1px;
+    border: solid rgb(67, 139, 9) 1px;
     min-width: 100%;
     border-radius: 4px;
     margin-bottom: 4px;
@@ -126,7 +127,7 @@ body{
 }
 
 .boton_dis{
-    border: solid black 1px;
+    border: solid rgb(122, 41, 41) 1px;
     min-width: 100%;
     border-radius: 4px;
     margin-bottom: 4px;
@@ -140,15 +141,23 @@ button{
 }
 
 .emp{
-    border: solid black 1px;
+    border: solid rgb(20, 129, 29) 1px;
     border-radius: 3px;
     padding: 8px 30px 8px 30px;
     margin: 12px 0px 15px 0px;
 }
 
 .rei{
-    border: solid black 1px;
+    border: solid rgb(122, 27, 27) 1px;
     border-radius: 3px;
     padding: 8px 30px 8px 28px;
     margin: 12px 0px 15px 11px;
+}
+
+/*centrar*/
+
+.centrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

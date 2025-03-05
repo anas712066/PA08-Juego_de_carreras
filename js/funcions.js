@@ -22,9 +22,17 @@ let personaje = 0;
 function cambiarfondo1() {
     //Personaje principal
     document.querySelector("#dp1").style.backgroundColor = color
+    document.querySelector("#dp1").style.border = "2px solid orange" //Borde
     personaje = 1;
 
-    //Otros personajes
+    //Quitar los bordes
+    document.querySelector("#dp2").style.border = "none" //Borde
+    document.querySelector("#dp3").style.border = "none" //Borde
+    document.querySelector("#dp4").style.border = "none" //Borde
+    document.querySelector("#dp5").style.border = "none" //Borde
+    document.querySelector("#dp6").style.border = "none" //Borde
+
+    //Quitar los demás fondos
     document.querySelector("#dp2").style.backgroundColor = fondo
     document.querySelector("#dp3").style.backgroundColor = fondo
     document.querySelector("#dp4").style.backgroundColor = fondo
@@ -36,6 +44,7 @@ function cambiarfondo1() {
 function cambiarfondo2() {
     //Personaje principal
     document.querySelector("#dp2").style.backgroundColor = color
+    document.querySelector("#dp2").style.border = "2px solid orange" //Borde
     personaje = 2;
 
     //Otros personajes
@@ -44,11 +53,19 @@ function cambiarfondo2() {
     document.querySelector("#dp4").style.backgroundColor = fondo
     document.querySelector("#dp5").style.backgroundColor = fondo
     document.querySelector("#dp6").style.backgroundColor = fondo
+
+    //Quitar los bordes
+    document.querySelector("#dp1").style.border = "none" //Borde
+    document.querySelector("#dp3").style.border = "none" //Borde
+    document.querySelector("#dp4").style.border = "none" //Borde
+    document.querySelector("#dp5").style.border = "none" //Borde
+    document.querySelector("#dp6").style.border = "none" //Borde
 }
 
 function cambiarfondo3() {
     //Personaje principal
     document.querySelector("#dp3").style.backgroundColor = color
+    document.querySelector("#dp3").style.border = "2px solid orange" //Borde
     personaje = 3;
 
     //Otros personajes
@@ -57,11 +74,19 @@ function cambiarfondo3() {
     document.querySelector("#dp4").style.backgroundColor = fondo
     document.querySelector("#dp5").style.backgroundColor = fondo
     document.querySelector("#dp6").style.backgroundColor = fondo
+
+    //Quitar los bordes
+    document.querySelector("#dp1").style.border = "none" //Borde
+    document.querySelector("#dp2").style.border = "none" //Borde
+    document.querySelector("#dp4").style.border = "none" //Borde
+    document.querySelector("#dp5").style.border = "none" //Borde
+    document.querySelector("#dp6").style.border = "none" //Borde
 }
 
 function cambiarfondo4() {
     //Personaje principal
     document.querySelector("#dp4").style.backgroundColor = color
+    document.querySelector("#dp4").style.border = "2px solid orange" //Borde
     personaje = 4;
 
     //Otros personajes
@@ -70,11 +95,19 @@ function cambiarfondo4() {
     document.querySelector("#dp3").style.backgroundColor = fondo
     document.querySelector("#dp5").style.backgroundColor = fondo
     document.querySelector("#dp6").style.backgroundColor = fondo
+
+    //Quitar los bordes
+    document.querySelector("#dp1").style.border = "none" //Borde
+    document.querySelector("#dp2").style.border = "none" //Borde
+    document.querySelector("#dp3").style.border = "none" //Borde
+    document.querySelector("#dp5").style.border = "none" //Borde
+    document.querySelector("#dp6").style.border = "none" //Borde
 }
 
 function cambiarfondo5() {
     //Personaje principal
     document.querySelector("#dp5").style.backgroundColor = color
+    document.querySelector("#dp5").style.border = "2px solid orange" //Borde
     personaje = 5;
 
     //Otros personajes
@@ -83,11 +116,19 @@ function cambiarfondo5() {
     document.querySelector("#dp3").style.backgroundColor = fondo
     document.querySelector("#dp4").style.backgroundColor = fondo
     document.querySelector("#dp6").style.backgroundColor = fondo
+
+    //Quitar los bordes
+    document.querySelector("#dp1").style.border = "none" //Borde
+    document.querySelector("#dp2").style.border = "none" //Borde
+    document.querySelector("#dp3").style.border = "none" //Borde
+    document.querySelector("#dp4").style.border = "none" //Borde
+    document.querySelector("#dp6").style.border = "none" //Borde
 }
 
 function cambiarfondo6() {
     //Personaje principal
     document.querySelector("#dp6").style.backgroundColor = color
+    document.querySelector("#dp6").style.border = "2px solid orange" //Borde
     personaje = 6;
 
     //Otros personajes
@@ -96,6 +137,13 @@ function cambiarfondo6() {
     document.querySelector("#dp3").style.backgroundColor = fondo
     document.querySelector("#dp4").style.backgroundColor = fondo
     document.querySelector("#dp5").style.backgroundColor = fondo
+
+    //Quitar los bordes
+    document.querySelector("#dp1").style.border = "none" //Borde
+    document.querySelector("#dp2").style.border = "none" //Borde
+    document.querySelector("#dp3").style.border = "none" //Borde
+    document.querySelector("#dp4").style.border = "none" //Borde
+    document.querySelector("#dp5").style.border = "none" //Borde
 }
 
 //Sumar y restar valores
@@ -357,12 +405,23 @@ restartButton.addEventListener('click', () => {
     document.querySelector("#dineroApuesta").innerHTML = contador
     document.querySelector("#dineroTotal").innerHTML = dineroTotal
 
+    //Poner fondo como al inicio
     document.querySelector("#dp1").style.backgroundColor = fondo
     document.querySelector("#dp2").style.backgroundColor = fondo
     document.querySelector("#dp3").style.backgroundColor = fondo
     document.querySelector("#dp4").style.backgroundColor = fondo
     document.querySelector("#dp5").style.backgroundColor = fondo
     document.querySelector("#dp6").style.backgroundColor = fondo
+
+
+    //Quitar los bordes
+    document.querySelector("#dp1").style.border = "none" //Borde
+    document.querySelector("#dp2").style.border = "none" //Borde
+    document.querySelector("#dp3").style.border = "none" //Borde
+    document.querySelector("#dp4").style.border = "none" //Borde
+    document.querySelector("#dp5").style.border = "none" //Borde
+    document.querySelector("#dp6").style.border = "none" //Borde
+
     cancelAnimationFrame(animationFrame1); // Detener animación activa
     cancelAnimationFrame(animationFrame2); // Detener animación activa
     cancelAnimationFrame(animationFrame3); // Detener animación activa
@@ -386,7 +445,7 @@ function declareWinner(ganador) {
     winnerDeclared = true;
     winnerImage.style.display = "block"; //Mostrar la imagen del ganador
 
-    if (personaje == 0){
+    if (personaje == 0) {
         dineroTotal = dineroTotal + contador;
     }
 
@@ -525,8 +584,8 @@ function apuesta() {
 
 
 //PERDISTE
-function perdiste(){
-    if (dineroTotal == 0){
+function perdiste() {
+    if (dineroTotal == 0) {
         window.alert("HAS PERDIDO. Reinicia la pagina para empezar de nuevo")
     }
 }

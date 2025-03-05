@@ -193,7 +193,7 @@ const char5 = document.getElementById('char5')
 const char6 = document.getElementById('char6')
 const startButton = document.querySelector("#start");
 const restartButton = document.querySelector("#restart");
-
+const winnerImage = document.getElementById('ganador');
 let position1 = 0;
 let position2 = 0;
 let position3 = 0;
@@ -244,7 +244,7 @@ function animate2() {
     }
 
     //Ver el ganador
-    if (position2 >= 1230 && !winnerDeclared) {
+    if (position2 >= 1224 && !winnerDeclared) {
         declareWinner("char2");
     }
 }
@@ -264,7 +264,7 @@ function animate3() {
     }
 
     //Ver el ganador
-    if (position3 >= 1230 && !winnerDeclared) {
+    if (position3 >= 1205 && !winnerDeclared) {
         declareWinner("char3");
     }
 }
@@ -284,7 +284,7 @@ function animate4() {
     }
 
     //Ver el ganador
-    if (position4 >= 1230 && !winnerDeclared) {
+    if (position4 >= 1216 && !winnerDeclared) {
         declareWinner("char4");
     }
 }
@@ -304,7 +304,7 @@ function animate5() {
     }
 
     //Ver el ganador
-    if (position5 >= 1230 && !winnerDeclared) {
+    if (position5 >= 1227 && !winnerDeclared) {
         declareWinner("char5");
     }
 }
@@ -324,7 +324,7 @@ function animate6() {
     }
 
     //Ver el ganador
-    if (position6 >= 1230 && !winnerDeclared) {
+    if (position6 >= 1234 && !winnerDeclared) {
         declareWinner("char6");
     }
 }
@@ -339,10 +339,12 @@ startButton.addEventListener('click', () => {
     position6 = 0; // Reiniciar posición
     animate1();
     animate2();
-    animate3();
-    animate4();
-    animate5();
-    animate6();
+    //animate3();
+    //animate4();
+    //animate5();
+    //animate6();
+    winnerDeclared = false;
+    winnerImage.style.display = "none"; //Ocultar ganador
 });
 
 //Reiniciar jugadores
@@ -360,6 +362,8 @@ restartButton.addEventListener('click', () => {
     char4.style.transform = `translateX(${position1}px)`; // Aplicar reinicio
     char5.style.transform = `translateX(${position1}px)`; // Aplicar reinicio
     char6.style.transform = `translateX(${position1}px)`; // Aplicar reinicio
+    winnerDeclared = false;
+    winnerImage.style.display = "none"; //Ocultar ganador
 });
 
 
@@ -369,9 +373,23 @@ function declareWinner(ganador) {
     winnerImage.style.display = "block"; //Mostrar la imagen del ganador
 
     if (ganador == "char1") {
-        winnerImage.src = "images/GIFS/hueso.gif";
+        winnerImage.src = "Images/GIFS/hueso.gif";
+        winnerImage.style.height = "80px"
     }
     else if (ganador == "char2") {
         winnerImage.src = "Images/GIFS/sonic.gif";
+        winnerImage.style.height = "80px"
+    }
+    else if (ganador == "char3") {
+        winnerImage.src = "Images/GIFS/mujer.gif";
+    }
+    else if (ganador == "char4") {
+        winnerImage.src = "Images/GIFS/knigth.gif";
+    }
+    else if (ganador == "char5") {
+        winnerImage.src = "Images/GIFS/hombre_corriendo.gif";
+    }
+    else{
+        winnerImage.src = "Images/GIFS/mario.gif";
     }
 }

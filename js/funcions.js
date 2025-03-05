@@ -17,7 +17,7 @@ document.querySelector("#per6").addEventListener("click", cambiarfondo6);
 //Efecto seleccionar personajes
 let color = 'rgb(30, 164, 0)';
 let fondo = 'rgb(112, 238, 129)';
-personaje = 0;
+let personaje = 0;
 
 function cambiarfondo1() {
     //Personaje principal
@@ -212,7 +212,7 @@ let winnerDeclared = false;
 function animate1() {
     //Cambios de velocidad aleatorio
     speed1 += (Math.random() - 0.5) * 2;
-    speed1 = Math.max(0.5, Math.min(speed1, 3)); //Limitar velocidad entre 0.5 y 5
+    speed1 = Math.max(0.5, Math.min(speed1, 5)); //Limitar velocidad entre 0.5 y 5
     position1 += speed1;
 
     //Mover el personaje
@@ -226,13 +226,14 @@ function animate1() {
     //Ver el ganador
     if (position1 >= 1230 && !winnerDeclared) {
         declareWinner("char1");
+        apuesta(); //Ver si gana o pierde dinero
     }
 }
 
 function animate2() {
     //Cambios de velocidad aleatorio
     speed2 += (Math.random() - 0.5) * 2;
-    speed2 = Math.max(0.5, Math.min(speed2, 3)); //Limitar velocidad entre 0.5 y 5
+    speed2 = Math.max(0.5, Math.min(speed2, 5)); //Limitar velocidad entre 0.5 y 5
     position2 += speed2;
 
     //Mover el personaje
@@ -252,7 +253,7 @@ function animate2() {
 function animate3() {
     //Cambios de velocidad aleatorio
     speed3 += (Math.random() - 0.5) * 2;
-    speed3 = Math.max(0.5, Math.min(speed3, 3)); //Limitar velocidad entre 0.5 y 5
+    speed3 = Math.max(0.5, Math.min(speed3, 5)); //Limitar velocidad entre 0.5 y 5
     position3 += speed3;
 
     //Mover el personaje
@@ -272,7 +273,7 @@ function animate3() {
 function animate4() {
     //Cambios de velocidad aleatorio
     speed4 += (Math.random() - 0.5) * 2;
-    speed4 = Math.max(0.5, Math.min(speed4, 3)); //Limitar velocidad entre 0.5 y 5
+    speed4 = Math.max(0.5, Math.min(speed4, 5)); //Limitar velocidad entre 0.5 y 5
     position4 += speed4;
 
     //Mover el personaje
@@ -292,7 +293,7 @@ function animate4() {
 function animate5() {
     //Cambios de velocidad aleatorio
     speed5 += (Math.random() - 0.5) * 2;
-    speed5 = Math.max(0.5, Math.min(speed5, 3)); //Limitar velocidad entre 0.5 y 5
+    speed5 = Math.max(0.5, Math.min(speed5, 5)); //Limitar velocidad entre 0.5 y 5
     position5 += speed5;
 
     //Mover el personaje
@@ -312,7 +313,7 @@ function animate5() {
 function animate6() {
     //Cambios de velocidad aleatorio
     speed6 += (Math.random() - 0.5) * 2;
-    speed6 = Math.max(0.5, Math.min(speed6, 3)); //Limitar velocidad entre 0.5 y 5
+    speed6 = Math.max(0.5, Math.min(speed6, 5)); //Limitar velocidad entre 0.5 y 5
     position6 += speed6;
 
     //Mover el personaje
@@ -326,6 +327,7 @@ function animate6() {
     //Ver el ganador
     if (position6 >= 1234 && !winnerDeclared) {
         declareWinner("char6");
+        apuesta(); //Ver si gana o pierde dinero
     }
 }
 
@@ -339,16 +341,30 @@ startButton.addEventListener('click', () => {
     position6 = 0; // Reiniciar posición
     animate1();
     animate2();
-    //animate3();
-    //animate4();
-    //animate5();
-    //animate6();
+    animate3();
+    animate4();
+    animate5();
+    animate6();
     winnerDeclared = false;
     winnerImage.style.display = "none"; //Ocultar ganador
 });
 
 //Reiniciar jugadores
 restartButton.addEventListener('click', () => {
+    personaje = 0;
+    dineroTotal = dineroTotal + contador;
+    dineroMax = dineroTotal;
+    contador = 0;
+
+    document.querySelector("#dineroApuesta").innerHTML = contador
+    document.querySelector("#dineroTotal").innerHTML = dineroTotal
+
+    document.querySelector("#dp1").style.backgroundColor = fondo
+    document.querySelector("#dp2").style.backgroundColor = fondo
+    document.querySelector("#dp3").style.backgroundColor = fondo
+    document.querySelector("#dp4").style.backgroundColor = fondo
+    document.querySelector("#dp5").style.backgroundColor = fondo
+    document.querySelector("#dp6").style.backgroundColor = fondo
     cancelAnimationFrame(animationFrame1); // Detener animación activa
     cancelAnimationFrame(animationFrame2); // Detener animación activa
     cancelAnimationFrame(animationFrame3); // Detener animación activa
@@ -372,24 +388,154 @@ function declareWinner(ganador) {
     winnerDeclared = true;
     winnerImage.style.display = "block"; //Mostrar la imagen del ganador
 
+    if (personaje == 0){
+        dineroTotal = dineroTotal + contador;
+    }
+
     if (ganador == "char1") {
         winnerImage.src = "Images/GIFS/hueso.gif";
         winnerImage.style.height = "80px"
+        if (personaje == 1) {
+            contador = contador * 2;
+            dineroTotal = dineroTotal + contador;
+            dineroMax = dineroMax + contador;
+            document.querySelector("#dineroTotal").innerHTML = dineroTotal
+            contador = 0;
+            document.querySelector("#dineroApuesta").innerHTML = contador
+        }
+        else {
+            dineroMax = dineroTotal;
+            document.querySelector("#dineroTotal").innerHTML = dineroTotal
+            contador = 0;
+            document.querySelector("#dineroApuesta").innerHTML = contador
+            perdiste();
+        }
     }
     else if (ganador == "char2") {
         winnerImage.src = "Images/GIFS/sonic.gif";
         winnerImage.style.height = "80px"
+        if (personaje == 2) {
+            contador = contador * 2;
+            dineroTotal = dineroTotal + contador;
+            dineroMax = dineroMax + contador;
+            document.querySelector("#dineroTotal").innerHTML = dineroTotal
+            contador = 0;
+            document.querySelector("#dineroApuesta").innerHTML = contador
+        }
+        else {
+            dineroMax = dineroTotal;
+            document.querySelector("#dineroTotal").innerHTML = dineroTotal
+            contador = 0;
+            document.querySelector("#dineroApuesta").innerHTML = contador
+            perdiste();
+        }
     }
     else if (ganador == "char3") {
         winnerImage.src = "Images/GIFS/mujer.gif";
+        winnerImage.style.height = "80px"
+        winnerImage.style.paddingRight = "10px"
+        if (personaje == 3) {
+            contador = contador * 2;
+            dineroTotal = dineroTotal + contador;
+            dineroMax = dineroMax + contador;
+            document.querySelector("#dineroTotal").innerHTML = dineroTotal
+            contador = 0;
+            document.querySelector("#dineroApuesta").innerHTML = contador
+        }
+        else {
+            dineroMax = dineroTotal;
+            document.querySelector("#dineroTotal").innerHTML = dineroTotal
+            contador = 0;
+            document.querySelector("#dineroApuesta").innerHTML = contador
+            perdiste();
+        }
     }
     else if (ganador == "char4") {
         winnerImage.src = "Images/GIFS/knigth.gif";
+        winnerImage.style.height = "80px"
+        if (personaje == 4) {
+            contador = contador * 2;
+            dineroTotal = dineroTotal + contador;
+            dineroMax = dineroMax + contador;
+            document.querySelector("#dineroTotal").innerHTML = dineroTotal
+            contador = 0;
+            document.querySelector("#dineroApuesta").innerHTML = contador
+        }
+        else {
+            dineroMax = dineroTotal;
+            document.querySelector("#dineroTotal").innerHTML = dineroTotal
+            contador = 0;
+            document.querySelector("#dineroApuesta").innerHTML = contador
+            perdiste();
+        }
     }
     else if (ganador == "char5") {
         winnerImage.src = "Images/GIFS/hombre_corriendo.gif";
+        winnerImage.style.height = "80px"
+        if (personaje == 5) {
+            contador = contador * 2;
+            dineroTotal = dineroTotal + contador;
+            dineroMax = dineroMax + contador;
+            document.querySelector("#dineroTotal").innerHTML = dineroTotal
+            contador = 0;
+            document.querySelector("#dineroApuesta").innerHTML = contador
+        }
+        else {
+            dineroMax = dineroTotal;
+            document.querySelector("#dineroTotal").innerHTML = dineroTotal
+            contador = 0;
+            document.querySelector("#dineroApuesta").innerHTML = contador
+            perdiste();
+        }
     }
-    else{
+    else {
         winnerImage.src = "Images/GIFS/mario.gif";
+        winnerImage.style.height = "80px"
+        if (personaje == 6) {
+            contador = contador * 2;
+            dineroTotal = dineroTotal + contador;
+            dineroMax = dineroMax + contador;
+            document.querySelector("#dineroTotal").innerHTML = dineroTotal
+            contador = 0;
+            document.querySelector("#dineroApuesta").innerHTML = contador
+        }
+        else {
+            dineroMax = dineroTotal;
+            document.querySelector("#dineroTotal").innerHTML = dineroTotal
+            contador = 0;
+            document.querySelector("#dineroApuesta").innerHTML = contador
+            perdiste();
+        }
+    }
+}
+
+//PREMIO APUESTA
+function apuesta() {
+
+    if (personaje == 1) {
+        if (ganador == "char1") {
+            contador = contador * 2;
+            dineroTotal = dineroTotal + contador;
+            dineroMax = dineroMax + contador;
+            document.querySelector("#dineroTotal").innerHTML = dineroTotal
+            contador = 0;
+            document.querySelector("#dineroApuesta").innerHTML = contador
+
+        }
+        else {
+            dineroMax = dineroMax - contador;
+            dineroTotal = dineroTotal / 2;
+            contador = 0;
+            document.querySelector("#dineroApuesta").innerHTML = contador
+            document.querySelector("#dineroTotal").innerHTML = dineroTotal
+        }
+    }
+}
+
+
+//PERDISTE
+function perdiste(){
+    if (dineroTotal == 0){
+        window.alert("HAS PERDIDO. Reinicia la pagina para empezar de nuevo")
     }
 }

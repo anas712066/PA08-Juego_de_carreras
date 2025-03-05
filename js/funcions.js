@@ -226,7 +226,6 @@ function animate1() {
     //Ver el ganador
     if (position1 >= 1230 && !winnerDeclared) {
         declareWinner("char1");
-        apuesta(); //Ver si gana o pierde dinero
     }
 }
 
@@ -327,7 +326,6 @@ function animate6() {
     //Ver el ganador
     if (position6 >= 1234 && !winnerDeclared) {
         declareWinner("char6");
-        apuesta(); //Ver si gana o pierde dinero
     }
 }
 
@@ -396,8 +394,7 @@ function declareWinner(ganador) {
         winnerImage.src = "Images/GIFS/hueso.gif";
         winnerImage.style.height = "80px"
         if (personaje == 1) {
-            contador = contador * 2;
-            dineroTotal = dineroTotal + contador;
+            dineroTotal += contador * 2;
             dineroMax = dineroMax + contador;
             document.querySelector("#dineroTotal").innerHTML = dineroTotal
             contador = 0;
@@ -415,8 +412,7 @@ function declareWinner(ganador) {
         winnerImage.src = "Images/GIFS/sonic.gif";
         winnerImage.style.height = "80px"
         if (personaje == 2) {
-            contador = contador * 2;
-            dineroTotal = dineroTotal + contador;
+            dineroTotal += contador * 2;
             dineroMax = dineroMax + contador;
             document.querySelector("#dineroTotal").innerHTML = dineroTotal
             contador = 0;
@@ -435,8 +431,7 @@ function declareWinner(ganador) {
         winnerImage.style.height = "80px"
         winnerImage.style.paddingRight = "10px"
         if (personaje == 3) {
-            contador = contador * 2;
-            dineroTotal = dineroTotal + contador;
+            dineroTotal += contador * 2;
             dineroMax = dineroMax + contador;
             document.querySelector("#dineroTotal").innerHTML = dineroTotal
             contador = 0;
@@ -454,8 +449,7 @@ function declareWinner(ganador) {
         winnerImage.src = "Images/GIFS/knigth.gif";
         winnerImage.style.height = "80px"
         if (personaje == 4) {
-            contador = contador * 2;
-            dineroTotal = dineroTotal + contador;
+            dineroTotal += contador * 2;
             dineroMax = dineroMax + contador;
             document.querySelector("#dineroTotal").innerHTML = dineroTotal
             contador = 0;
@@ -473,8 +467,7 @@ function declareWinner(ganador) {
         winnerImage.src = "Images/GIFS/hombre_corriendo.gif";
         winnerImage.style.height = "80px"
         if (personaje == 5) {
-            contador = contador * 2;
-            dineroTotal = dineroTotal + contador;
+            dineroTotal += contador * 2;
             dineroMax = dineroMax + contador;
             document.querySelector("#dineroTotal").innerHTML = dineroTotal
             contador = 0;
@@ -492,8 +485,7 @@ function declareWinner(ganador) {
         winnerImage.src = "Images/GIFS/mario.gif";
         winnerImage.style.height = "80px"
         if (personaje == 6) {
-            contador = contador * 2;
-            dineroTotal = dineroTotal + contador;
+            dineroTotal += contador * 2;
             dineroMax = dineroMax + contador;
             document.querySelector("#dineroTotal").innerHTML = dineroTotal
             contador = 0;
@@ -514,8 +506,7 @@ function apuesta() {
 
     if (personaje == 1) {
         if (ganador == "char1") {
-            contador = contador * 2;
-            dineroTotal = dineroTotal + contador;
+            dineroTotal += contador * 2;
             dineroMax = dineroMax + contador;
             document.querySelector("#dineroTotal").innerHTML = dineroTotal
             contador = 0;
@@ -539,3 +530,6 @@ function perdiste(){
         window.alert("HAS PERDIDO. Reinicia la pagina para empezar de nuevo")
     }
 }
+
+//MENSAJE REINICIAR
+alert("No olvides REINICIAR cada que termine una carrera")

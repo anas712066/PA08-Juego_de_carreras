@@ -14,7 +14,6 @@ document.querySelector("#per5").addEventListener("click", cambiarfondo5);
 document.querySelector("#per6").addEventListener("click", cambiarfondo6);
 
 //Cerrar ventana emergente
-
 document.querySelector("#cerrar_ventana").addEventListener("click", cerrarVentana);
 
 var ventana = document.getElementById('ventana');
@@ -23,7 +22,6 @@ var cuadro2 = document.getElementById('cuadro2');
 var cuadro3 = document.getElementById('cuadro3');
 
 function cerrarVentana(){
-
     ventana.style.display = 'none';
     cuadro1.style.display = 'block';
     cuadro2.style.display = 'block';
@@ -163,13 +161,12 @@ function cambiarfondo6() {
 }
 
 //Sumar y restar valores
-let contador = 0;
-let dineroTotal = 1000;
-let dineroMax = 1000;
+let contador = 0; //Dinero apostado
+let dineroTotal = 1000; //Dinero que se muestra, o el total
+let dineroMax = 1000; //Cantidad para no pasarse del total maximo
 
-
+//Funcion para sumar 10
 function sumar10() {
-
     if (dineroTotal == 0 || dineroTotal < 0) {
         contador = contador + 0;
         dineroTotal = 0;
@@ -185,11 +182,10 @@ function sumar10() {
         document.querySelector("#dineroApuesta").innerHTML = contador
         document.querySelector("#dineroTotal").innerHTML = dineroTotal
     }
-
 }
 
+//Funcion para sumar 50
 function sumar50() {
-
     if (dineroTotal - 50 < 0 || dineroTotal - 50 == 0) { /*Si la resta es menor que 0 o igual a 0, es que llegó a la maxima apuesta posible*/
         /*Aumentar dinero apuesta*/
         contador = dineroMax;
@@ -206,11 +202,10 @@ function sumar50() {
         document.querySelector("#dineroApuesta").innerHTML = contador
         document.querySelector("#dineroTotal").innerHTML = dineroTotal
     }
-
 }
 
+//Funcion para restar 10
 function resta10() {
-
     if (dineroTotal + 10 == dineroMax || dineroTotal + 10 > dineroMax) { //Si el dinero llega al maximo, no subirá más que eso
         dineroTotal = dineroMax;
         contador = 0;
@@ -225,11 +220,10 @@ function resta10() {
         document.querySelector("#dineroApuesta").innerHTML = contador
         document.querySelector("#dineroTotal").innerHTML = dineroTotal
     }
-
 }
 
+//Funcion para restar 50
 function resta50() {
-
     if (dineroTotal + 50 == dineroMax || dineroTotal + 50 > dineroMax) { //Si el dinero llega al maximo, no subirá más que eso
         dineroTotal = dineroMax;
         contador = 0;
@@ -244,11 +238,9 @@ function resta50() {
         document.querySelector("#dineroApuesta").innerHTML = contador
         document.querySelector("#dineroTotal").innerHTML = dineroTotal
     }
-
 }
 
 //Movimiento personajes
-
 const char1 = document.getElementById('char1')
 const char2 = document.getElementById('char2')
 const char3 = document.getElementById('char3')
@@ -258,21 +250,22 @@ const char6 = document.getElementById('char6')
 const startButton = document.querySelector("#start");
 const restartButton = document.querySelector("#restart");
 const winnerImage = document.getElementById('ganador');
-let position1 = 0;
-let position2 = 0;
-let position3 = 0;
-let position4 = 0;
-let position5 = 0;
-let position6 = 0;
-let speed1 = 1;
-let speed2 = 1;
-let speed3 = 1;
-let speed4 = 1;
-let speed5 = 1;
-let speed6 = 1;
-let animationFrame1, animationFrame2, animationFrame3, animationFrame4, animationFrame5, animationFrame6;
-let winnerDeclared = false;
+let position1 = 0; //Posicion personaje 1
+let position2 = 0; //Posicion personaje 2
+let position3 = 0; //Posicion personaje 3
+let position4 = 0; //Posicion personaje 4
+let position5 = 0; //Posicion personaje 5
+let position6 = 0; //Posicion personaje 6
+let speed1 = 1; //Velocidad personaje 1
+let speed2 = 1; //Velocidad personaje 2
+let speed3 = 1; //Velocidad personaje 3
+let speed4 = 1; //Velocidad personaje 4
+let speed5 = 1; //Velocidad personaje 5
+let speed6 = 1; //Velocidad personaje 6
+let animationFrame1, animationFrame2, animationFrame3, animationFrame4, animationFrame5, animationFrame6; //Animacion de movimiento de los personajes
+let winnerDeclared = false; //Ganador
 
+//Cambios de velocida de de forma aleatoria (Personaje 1)
 function animate1() {
     //Cambios de velocidad aleatorio
     speed1 += (Math.random() - 0.5) * 2;
@@ -293,6 +286,7 @@ function animate1() {
     }
 }
 
+//Cambios de velocida de de forma aleatoria (Personaje 2)
 function animate2() {
     //Cambios de velocidad aleatorio
     speed2 += (Math.random() - 0.5) * 2;
@@ -313,6 +307,7 @@ function animate2() {
     }
 }
 
+//Cambios de velocida de de forma aleatoria (Personaje 3)
 function animate3() {
     //Cambios de velocidad aleatorio
     speed3 += (Math.random() - 0.5) * 2;
@@ -333,6 +328,7 @@ function animate3() {
     }
 }
 
+//Cambios de velocida de de forma aleatoria (Personaje 4)
 function animate4() {
     //Cambios de velocidad aleatorio
     speed4 += (Math.random() - 0.5) * 2;
@@ -353,6 +349,7 @@ function animate4() {
     }
 }
 
+//Cambios de velocida de de forma aleatoria (Personaje 5)
 function animate5() {
     //Cambios de velocidad aleatorio
     speed5 += (Math.random() - 0.5) * 2;
@@ -373,6 +370,7 @@ function animate5() {
     }
 }
 
+//Cambios de velocida de de forma aleatoria (Personaje 6)
 function animate6() {
     //Cambios de velocidad aleatorio
     speed6 += (Math.random() - 0.5) * 2;
@@ -393,6 +391,7 @@ function animate6() {
     }
 }
 
+
 // Iniciar animación
 startButton.addEventListener('click', () => {
     position1 = 0; // Reiniciar posición
@@ -401,17 +400,17 @@ startButton.addEventListener('click', () => {
     position4 = 0; // Reiniciar posición
     position5 = 0; // Reiniciar posición
     position6 = 0; // Reiniciar posición
-    animate1();
-    animate2();
-    animate3();
-    animate4();
-    animate5();
-    animate6();
+    animate1(); //Iniciar movimiento personaje 1
+    animate2(); //Iniciar movimiento personaje 1
+    animate3(); //Iniciar movimiento personaje 1
+    animate4(); //Iniciar movimiento personaje 1
+    animate5(); //Iniciar movimiento personaje 1
+    animate6(); //Iniciar movimiento personaje 1
     winnerDeclared = false;
     winnerImage.style.display = "none"; //Ocultar ganador
 });
 
-//Reiniciar jugadores
+//Reiniciar jugadores, dinero, todo
 restartButton.addEventListener('click', () => {
     personaje = 0;
     dineroTotal = dineroTotal + contador;

@@ -1,14 +1,80 @@
-/*
-body{
+
+/*body{
     background-image: url(../Images/Fondo10.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}*/
 
+/*Cuadro emergente*/
+
+.cuadrado{
+    width: 500px;
+    height: 250px;
+    background-color: #d9ffa5;
+    position: absolute;
+    left: 36%;
+    top: 20%;
+    border-radius: 5px;
 }
-*/
+
+#cerrar_ventana{
+    background-color:#fd6262;
+    border-radius: 4px;
+}
+
+#cerrar_ventana:hover{
+    background-color: #ff2222;
+    transition: 1s;
+}
+
+#cuadro1{
+    display: none;
+}
+
+#cuadro2{
+    display: none;
+}
+
+#cuadro3{
+
+    display: none;
+}
 
 /*Fondos*/
+
+.fondo_esqueleto{
+    background-image: url(../Images/wall_bones1.png);
+}
+
+.fondo_sonic{
+    background-image: url(../Images/sonic_wall1.png);
+}
+
+.fondo_mujer{
+    background-image: url(../Images/desert_1.png);
+}
+
+.fondo_armor{
+    background-image: url(../Images/forest_2.png);
+}
+
+.fondo_mar{
+    background-image: url(../Images/ud.png);
+}
+
+.fondo_mario{
+    background-image: url(../Images/mario_1.png);
+}
+
+.repeat{
+    background-repeat: repeat-x;
+}
+
+.fondo_body{
+    background-color: #003a038a;
+}
+
 .fondoverde{
     background-color: rgb(112, 238, 129);
 }
@@ -37,6 +103,14 @@ body{
     background-color: #ff2222;
 }
 
+.fondo_dinero{
+    background-color: #8afcd6;
+}
+
+.fondo_winner{
+    background-color: rgb(255, 255, 186);
+}
+
 /*Cosas X*/
 
 .centro{
@@ -48,9 +122,17 @@ body{
     border: solid black 1px;
 }
 
+.borde_corredores{
+    border: 1px solid rgb(102, 102, 102);
+}
+
 .personajes{
     padding-left: 50px;
     padding-right: 50px;
+}
+
+.borde_general{
+    border: 1px solid #006d06;
 }
 
 .personaje{
@@ -98,7 +180,25 @@ body{
     size: 20px;
 }
 
+#btnSum10:hover{
+    background-color: #00be0a;
+    transition: 1s;
+}
 
+#btnSum50:hover{
+    background-color: #00be0a;
+    transition: 1s;
+}
+
+#btnRes10:hover{
+    background-color: #ff2222;
+    transition: 1s;
+}
+
+#btnRes50:hover{
+    background-color: #ff2222;
+    transition: 1s;
+}
 
 /*.container{
     border: solid black 1px;
@@ -199,4 +299,13 @@ button{
 
 .ganador{
     min-height: 90px;
+}
+
+/*Titulo - Cuerpo*/
+.titulo_marco{
+    border-radius: 5px;
+}
+
+.cuerpo_marco{
+    border-radius: 5px;
 }

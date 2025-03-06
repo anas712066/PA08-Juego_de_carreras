@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Images/ficha.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles/styles.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <title>JUEGO</title>
+</head>
+
+<body class="fondo_body">
+
+    <div class="cuadrado borde_general" id="ventana">
+        <div class="container ">
+            <div class="row">
+                <div class="col centrar">
+                    <h2>INSTRUCCIONES</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>1.- Introduce el dinero a apostar</p>
+                    <p>2.- Escoge un personaje</p>
+                    <p>3.- Dale a EMPEZAR</p>
+                    <p>4.- Dale a REINICIAR cuando termine una carrera</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button id="cerrar_ventana">Cerrar ventana</button>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <div class="container arriba" id="cuadro1">
+        <div class="row">
+            <div class="col titulo_marco borde_general fondoverde">
+                <div class="col marco titulo_marco fondoblanco centrar">
+                    <img src="Images/JUEGO-DE-CARRERAS-6-3-2025.png" width="400px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container arriba" id="cuadro2">
+        <div class="row">
+            <div class="col fondoverde borde_general cuerpo_marco" id="box">
+                <div class="col cuerpo_marco arriba fondo_esqueleto repeat borde_corredores">
+                    <img src="Images/GIFS/hueso.gif" class="corredor" id="char1" alt="huesito" height="80px">
+                </div>
+                <div class="col cuerpo_marco fondoblanco fondo_sonic repeat borde_corredores">
+                    <img src="Images/GIFS/sonic.gif" class="corredor" id="char2" alt="huesito" height="70px">
+                </div>
+                <div class="col cuerpo_marco fondoblanco fondo_mujer repeat borde_corredores">
+                    <img src="Images/GIFS/mujer.gif" class="corredor" id="char3" alt="huesito" height="70px">
+                </div>
+                <div class="col cuerpo_marco fondoblanco fondo_armor repeat borde_corredores">
+                    <img src="Images/GIFS/knigth.gif" class="corredor" id="char4" alt="huesito" height="70px">
+                </div>
+                <div class="col cuerpo_marco fondoblanco fondo_mar repeat borde_corredores">
+                    <img src="Images/GIFS/hombre_corriendo.gif" class="corredor" id="char5" alt="huesito" height="70px">
+                </div>
+                <div class="col cuerpo_marco fondoblanco abajo fondo_mario repeat borde_corredores">
+                    <img src="Images/GIFS/mario.gif" class="corredor" id="char6" alt="huesito" height="70px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container cuerpo_marco borde_general fondoverde arriba" id="cuadro3">
+        <div class="row">
+            <div class="col espacio_arriba_15">
+                <div class="container">
+                    <div class="row">
+                        <div class="col centrar">
+                            <h2>APUESTA</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col pad_5">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="dinero_borde fondo_dinero">
+                                        <h2 class="centro" id="dineroApuesta">0</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col ">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <button class="boton_aum centro fondoaumento" id="btnSum10">+10</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <button class="boton_aum centro fondoaumento" id="btnSum50">+50</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <button class="boton_dis centro fondoquitar" id="btnRes10">-10</button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <button class="boton_dis centro fondoquitar" id="btnRes50">-50</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <button class="centro emp fondoempezar" id="start">EMPEZAR</button>
+                                    </div>
+                                    <div class="col-6">
+                                        <button class="centro rei fondoreiniciar" id="restart">REINICIAR</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Cuadro 2-->
+            <div class="col-5 espacio_arriba_15">
+                <div class="container ">
+                    <div class="row">
+                        <div class="col">
+                            <h4 class="centrar espacio_arriba_25">Escoge un personaje</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col espacio_arriba_15">
+                            <div class="container " id="personajes">
+
+                                <div class="row">
+                                    <div class="col centrar personaje espacio" id="dp1">
+                                        <img src="Images/GIFS/hueso.gif" alt="huesito" height="70px" id="per1">
+                                    </div>
+                                    <div class="col centrar personaje espacio" id="dp2">
+                                        <img src="Images/GIFS/sonic.gif" alt="huesito" height="70px" id="per2">
+                                    </div>
+                                    <div class="col centrar personaje espacio" id="dp3">
+                                        <img src="Images/GIFS/mujer.gif" alt="huesito" height="70px" id="per3">
+                                    </div>
+                                </div>
+                                <div class="row abajo">
+                                    <div class="col centrar personaje espacio" id="dp4">
+                                        <img src="Images/GIFS/knigth.gif" alt="huesito" height="70px" id="per4">
+                                    </div>
+                                    <div class="col centrar personaje espacio" id="dp5">
+                                        <img src="Images/GIFS/hombre_quieto.gif" alt="huesito" height="70px" id="per5">
+                                    </div>
+                                    <div class="col centrar personaje espacio" id="dp6">
+                                        <img src="Images/GIFS/mario.gif" alt="huesito" height="70px" id="per6">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cuadro 3-->
+            <div class="col espacio_arriba_15">
+                <div class="container">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col abajo centrar">
+                                <img src="Images/GANADOR-6-3-2025.png" width="200px">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col fondo_winner cuerpo_marco borde">
+                                <div class="container">
+                                    <div class="row centrar">
+                                        <div class="col-3 centro abajo ganador">
+                                            <img src="images/GIFS/hueso.gif" id="ganador" alt="Ganador">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <h4 class="centro">Dinero Total</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="dinero_total fondo_dinero">
+                                <h2 id="dineroTotal" class="centro">1000</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/funcions.js"></script>
+
+</body>
+
+</html>

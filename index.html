@@ -1,207 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Images/ficha.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles/styles.css" type="text/css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <title>INICI</title>
+    <link rel="stylesheet" href="menu/menu.css">
+    <title>Inicio</title>
 </head>
-
-<body class="fondo">
-
-    <div class="container arriba">
-        <div class="row">
-            <div class="col fondoverde">
-                <div class="col marco fondoblanco">
-                    <h3 class="centro">Carreras</h3>
-                </div>
-            </div>
+<body>
+<main class="game-container">
+    <div id="start-screen" class="screen">
+        <h1 class="screen_game-title" id="game-title">Juego de Carreras</h1>
+        <a href="maingame.html"><button class="screen_btn btn-start" id="start-button">Pulsa para empezar</button></a>
+    </div>
+    <canvas class="game-canvas" id="gameCanvas"></canvas>
+    <div class="modal" id="game-over-modal">
+        <div class="modal_content">
+            <h2>Game Over</h2>
+            <p id="final-score">Score: 0</p>
+            <button class="screen_btn btn-restart" id="restart-button">Restart</button>
+            <button class="screen_btn btn-restart" id="main-menu-button">Main Menu</button>
         </div>
     </div>
+</main>
 
-    <div class="container arriba">
-        <div class="row">
-            <div class="col fondoverde" id="box">
-                <div class="col arriba fondoblanco borde">
-                    <img src="Images/GIFS/hueso.gif" class="corredor" id="char1" alt="huesito" height="80px">
-                </div>
-                <div class="col fondoblanco borde">
-                    <img src="Images/GIFS/sonic.gif" class="corredor"  id="char2" alt="huesito" height="70px">
-                </div>
-                <div class="col fondoblanco borde">
-                    <img src="Images/GIFS/mujer.gif" class="corredor"  id="char3" alt="huesito" height="70px">
-                </div>
-                <div class="col fondoblanco borde">
-                    <img src="Images/GIFS/knigth.gif" class="corredor"  id="char4" alt="huesito" height="70px">
-                </div>
-                <div class="col fondoblanco borde">
-                    <img src="Images/GIFS/hombre_corriendo.gif" class="corredor"  id="char5" alt="huesito" height="70px">
-                </div>
-                <div class="col fondoblanco abajo borde">
-                    <img src="Images/GIFS/mario.gif" class="corredor"  id="char6" alt="huesito" height="70px">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container fondoverde arriba">
-        <div class="row">
-            <div class="col espacio_arriba_15">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <h4 class="centro">Cantidad a apostar</h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col pad_5">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="dinero_borde">
-                                        <h2 class="centro" id="dineroApuesta">0</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col ">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        <button class="boton_aum centro fondoaumento" id="btnSum10">+10</button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <button class="boton_aum centro fondoaumento" id="btnSum50">+50</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col">
-                                        <button class="boton_dis centro fondoquitar" id="btnRes10">-10</button>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <button class="boton_dis centro fondoquitar" id="btnRes50">-50</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <button class="centro emp fondoempezar" id="start">EMPEZAR</button>
-                                    </div>
-                                    <div class="col-6">
-                                        <button class="centro rei fondoreiniciar" id="restart">REINICIAR</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Cuadro 2-->
-            <div class="col-5 espacio_arriba_15">
-                <div class="container ">
-                    <div class="row">
-                        <div class="col">
-                            <h4 class="centrar espacio_arriba_25">Escoge un personaje</h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col espacio_arriba_15">
-                            <div class="container " id="personajes">
-
-                                <div class="row">
-                                    <div class="col centrar personaje espacio" id="dp1">
-                                        <img src="Images/GIFS/hueso.gif" alt="huesito" height="70px" id="per1">
-                                    </div>
-                                    <div class="col centrar personaje espacio" id="dp2">
-                                        <img src="Images/GIFS/sonic.gif" alt="huesito" height="70px" id="per2">
-                                    </div>
-                                    <div class="col centrar personaje espacio" id="dp3">
-                                        <img src="Images/GIFS/mujer.gif" alt="huesito" height="70px" id="per3">
-                                    </div>
-                                </div>
-                                <div class="row abajo">
-                                    <div class="col centrar personaje espacio" id="dp4">
-                                        <img src="Images/GIFS/knigth.gif" alt="huesito" height="70px" id="per4">
-                                    </div>
-                                    <div class="col centrar personaje espacio" id="dp5">
-                                        <img src="Images/GIFS/hombre_quieto.gif" alt="huesito" height="70px" id="per5">
-                                    </div>
-                                    <div class="col centrar personaje espacio" id="dp6">
-                                        <img src="Images/GIFS/mario.gif" alt="huesito" height="70px" id="per6">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cuadro 3-->
-            <div class="col espacio_arriba_15">
-                <div class="container">
-                    <div class="col espacio">
-                        <div class="row">
-                            <div class="col ">
-                                <h3 class="centro">GANADOR</h3>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col borde">
-                                <div class="container">
-                                    <div class="row centrar">
-                                        <div class="col-3 centro abajo ganador">
-                                            <img src="images/GIFS/hueso.gif" id="ganador" alt="Ganador">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <h4 class="centro">Dinero Total</h4>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="dinero_total">
-                                <h2 id="dineroTotal" class="centro">1000€</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="jquery-3.4.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/funcions.js"></script>
-
+    <script src="menu/index.js"></script>
 </body>
-
 </html>

@@ -13,6 +13,22 @@ document.querySelector("#per4").addEventListener("click", cambiarfondo4);
 document.querySelector("#per5").addEventListener("click", cambiarfondo5);
 document.querySelector("#per6").addEventListener("click", cambiarfondo6);
 
+//Cerrar ventana emergente
+
+document.querySelector("#cerrar_ventana").addEventListener("click", cerrarVentana);
+
+var ventana = document.getElementById('ventana');
+var cuadro1 = document.getElementById('cuadro1');
+var cuadro2 = document.getElementById('cuadro2');
+var cuadro3 = document.getElementById('cuadro3');
+
+function cerrarVentana(){
+
+    ventana.style.display = 'none';
+    cuadro1.style.display = 'block';
+    cuadro2.style.display = 'block';
+    cuadro3.style.display = 'block';
+}
 
 //Efecto seleccionar personajes
 let color = 'rgb(30, 164, 0)';
@@ -589,6 +605,3 @@ function perdiste() {
         window.alert("HAS PERDIDO. Reinicia la pagina para empezar de nuevo")
     }
 }
-
-//MENSAJE REINICIAR
-alert("No olvides REINICIAR cada que termine una carrera")
